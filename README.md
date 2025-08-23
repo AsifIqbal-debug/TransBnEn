@@ -11,6 +11,9 @@ A comprehensive Bangla-English translation and transliteration tool with trained
 - Direct mapping system for common names
 - Interactive command-line interface
 - Debugging tools for character-by-character analysis
+- Title/prefix handling (e.g., "শ্রী" → "Shri", "ডাঃ" → "Dr.")
+- Surname/postfix handling (e.g., "চক্রবর্তী" → "Chakraborty")
+- Support for names with both prefixes and suffixes
 
 ## Installation
 
@@ -80,8 +83,52 @@ Bengali,English
 কাদেরিয়া,Kaderiya
 ```
 
+## Special Name Handling
+
+### Prefix/Title Support
+The system properly handles Bengali title prefixes with their conventional English transliterations:
+
+Examples:
+- "শ্রী" → "Shri" (Mr.)
+- "শ্রীমতী" → "Srimoti" (Mrs.)
+- "ডাঃ" → "Dr." (Doctor)
+- "প্রফেসর" → "Professor"
+- "মোঃ" → "Md." (Mohammad)
+- "জনাব" → "Janab" (Mr. in Muslim context)
+
+### Surname/Postfix Support
+The system preserves conventional English spellings for Bengali surnames:
+
+Examples:
+- "চক্রবর্তী" → "Chakraborty"
+- "বন্দ্যোপাধ্যায়" → "Banerjee"
+- "মুখোপাধ্যায়" → "Mukherjee"
+- "দত্ত" → "Datta"
+- "সেন" → "Sen"
+
+### Father Name Transliteration
+```python
+from TransBnEn.translateIndigo_with_father_name import transliterate_father_name
+
+result = transliterate_father_name("মোঃ আরিফ খান")  # "Md. Arif Khan"
+```
+
+### Complex Name Examples
+```python
+from TransBnEn.translateIndigo_with_father_name import transliterate
+
+# Name with title and surname
+result = transliterate("শ্রী অভিজিৎ চক্রবর্তী")  # "Shri Abhijit Chakraborty"
+
+# Multi-word name with title and surname
+result = transliterate("শ্রীমতী কল্যাণী দেবী চট্টোপাধ্যায়")  # "Srimoti Kalyani Devi Chatterjee"
+```
+
 ## Testing
 
+```
+python test_surname_postfix.py  # Test surname handling
+python test_combined_prefix_suffix.py  # Test names with both prefixes and suffixes
 ```
 python -m unittest discover tests
 ```
