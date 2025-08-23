@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: TransBnEn
+Version: 0.1.0
+Summary: Bengali-English transliteration tool
+Author: Asif Iqbal
+Author-email: asif.iqbal@example.com
+Keywords: bengali,transliteration,bangla,translation
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: keywords
+Dynamic: requires-python
+Dynamic: summary

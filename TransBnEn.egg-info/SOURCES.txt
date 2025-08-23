@@ -1,0 +1,14 @@
+README.md
+setup.py
+TransBnEn/__init__.py
+TransBnEn/__main__.py
+TransBnEn/train_names.py
+TransBnEn/translateHensinki.py
+TransBnEn/translateIndigo.py
+TransBnEn/transliterate.py
+TransBnEn.egg-info/PKG-INFO
+TransBnEn.egg-info/SOURCES.txt
+TransBnEn.egg-info/dependency_links.txt
+TransBnEn.egg-info/entry_points.txt
+TransBnEn.egg-info/top_level.txt
+tests/test_transliteration.py
