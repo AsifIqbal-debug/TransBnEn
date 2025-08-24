@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent))
 
-from TransBnEn.translateIndigo_with_father_name import transliterate_father_name
+from TransBnEn.translateIndigo_with_name import transliterate_name_specialized
 
 def test_variations():
     test_variations = [
@@ -17,7 +17,7 @@ def test_variations():
 
     print('Testing variations of the Bengali name:')
     for i, variant in enumerate(test_variations, 1):
-        result = transliterate_father_name(variant)
+        result = transliterate_name_specialized(variant)
         print(f'{i}. Input: "{variant}"')
         print(f'   Output: "{result}"')
 

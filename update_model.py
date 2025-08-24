@@ -1,4 +1,4 @@
-"""Script to update the father name transliteration model."""
+"""Script to update the specialized name transliteration model."""
 
 import pickle
 from pathlib import Path
@@ -6,11 +6,11 @@ import sys
 
 sys.path.append(str(Path(__file__).resolve().parent))
 
-# Path to the father name transliteration model
-model_path = Path(__file__).resolve().parent / "models" / "father_name_transliteration_model_corrected.pkl"
+# Path to the specialized name transliteration model
+model_path = Path(__file__).resolve().parent / "models" / "name_transliteration_model_corrected.pkl"
 
 def update_model():
-    """Update the father name model with the correct mapping."""
+    """Update the specialized name model with the correct mapping."""
     try:
         print(f"Loading model from {model_path}")
         with open(model_path, 'rb') as f:
